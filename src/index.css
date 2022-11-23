@@ -3,11 +3,13 @@
 :root {
     --bg-color: rgb(249, 254, 255);
     --font-color: black;
+    --box-color: rgb(243, 215, 33);
 }
 
 [data-theme='dark'] {
     --bg-color: rgb(29, 34, 45);
     --font-color: aliceblue;
+    --box-color: rgb(69, 159, 248);
 }
 
 * {
@@ -26,4 +28,8 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+a {
+    text-decoration: none;
 }

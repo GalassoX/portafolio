@@ -1,12 +1,13 @@
-
+import About from './components/About/About';
 import Home from './components/Home/Home';
-import ChangeMode from './components/ChangeMode/ChangeMode';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
     return (
         <>
-            <ChangeMode />
+            <NavBar />
             <Home />
+            <About />
             {/* About me
             Projects
             Contact */}
