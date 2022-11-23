@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.description {
+    width: 75%;
+    height: min-content;
+    padding: 2em;
+    border-radius: 15px 5px 15px;
+    background-color: var(--box-color);
+}
+
+.description ul {
+    width: 75%;
+    margin: 1em 2em;
+}
+
+.main>h1 {
+    color: var(--font-color);
+}
