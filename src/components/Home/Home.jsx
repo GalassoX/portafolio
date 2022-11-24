@@ -28,8 +28,8 @@ const Home = () => {
             <h1>Rafael Marrugo</h1>
             <p><u>Software Developer, technologies enjoyer</u></p>
             <div className={styles.social}>
-                {social.map(s => (
-                    <a href={s.link} target="_blank" rel="noopener noreferrer">
+                {social.map((s, i) => (
+                    <a href={s.link} target="_blank" rel="noopener noreferrer" key={i}>
                         {s.img}
                     </a>
                 ))}
