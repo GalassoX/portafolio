@@ -14,7 +14,7 @@ const About = () => {
     }, []);
 
     return (
-        <section className={styles.main}>
+        <section className={styles.main} id='about'>
             <h1>About me</h1>
             <div className={styles.description}>
                 <p id='d-text'></p>

@@ -10,9 +10,10 @@ const NavBar = () => {
                 <ChangeMode />
             </div>
             <div className={styles.links}>
-                <a href="#about"><i><b>About me</b></i></a>
-                <a href="#projects"><i><b>Projects</b></i></a>
-                <a href="#contact"><i><b>Contact</b></i></a>
+                <a href="/#"><i><b>Home</b></i></a>
+                <a href="/#about"><i><b>About me</b></i></a>
+                <a href="/#projects"><i><b>Projects</b></i></a>
+                <a href="/#contact"><i><b>Contact</b></i></a>
             </div>
         </nav>
     )
