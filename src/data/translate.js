@@ -15,9 +15,11 @@ const languages = [
 ];
 
 const translate = (keyword) => {
-    // console.log(navigator.language)
+    if (!keyword) return;
     const language = languages.find(l => l.regex.test(navigator.language));
-    // console.log(language)
+    if (!language) {
+        return english[keyword];
+    }
     return language.module[keyword] ?? 'Translate not defined';
 }
 
