@@ -1,3 +1,4 @@
+import translate from '../../data/translate';
 import Github from '../../imgs/svgs/Github';
 import LinkedIn from '../../imgs/svgs/LinkedIn';
 import Twitter from '../../imgs/svgs/Twitter';
@@ -26,7 +27,7 @@ const Home = () => {
     return (
         <section className={styles.main}>
             <h1>Rafael Marrugo</h1>
-            <p><u>Software Developer, technologies enjoyer</u></p>
+            <p><u>{translate('SHORT_DESC')}</u></p>
             <div className={styles.social}>
                 {social.map((s, i) => (
                     <a href={s.link} target="_blank" rel="noopener noreferrer" key={i}>

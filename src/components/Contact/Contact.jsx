@@ -1,3 +1,4 @@
+import translate from '../../data/translate';
 import Discord from '../../imgs/svgs/Discord';
 import Mail from '../../imgs/svgs/Mail';
 import Twitter from '../../imgs/svgs/Twitter';
@@ -7,7 +8,7 @@ const Contact = () => {
     return (
         <section className={styles.main} id='contact'>
             <div className={styles.info}>
-                <h1>Contact</h1>
+                <h1>• {translate('CONTACT')}</h1>
                 <div>
                     <Mail />
                     <a href="mailto:rafaelmarrugo28@gmail.com">rafaelmarrugo28@gmail.com</a>

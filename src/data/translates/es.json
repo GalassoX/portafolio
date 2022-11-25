@@ -1,0 +1,15 @@
+{
+    "ABOUT_ME": "Sobre mí",
+    "PROJECTS": "Proyectos",
+    "CONTACT": "Contacto",
+    "SHORT_DESC": "Apasiondo por la tecnología, desarrollador de software",
+    "LONG_DESC": "Me gusta programar tanto como los juegos.\nSoy un desarrollador de software con ganas de aprender todos los días algo nuevo y tener cosas que hacer a toda hora.\n\nCuento con experiencia en multiples lenguajes como:",
+    "D_PORTFOLIO": "Codigo fuente de mi portafolio web",
+    "D_TODO_RUST": "To-Do app hecha en Rust con el objetivo de aprender",
+    "D_RW_API": "API RestFUL hecha en TypeScript para una comunidad de juegos que no existe actualmente, la API fue hecha por mí, usa los siguentes modulos: express, mysql, JWT y bcrypt.js",
+    "D_RW_WEB": "La pagina web de la API de Rootwide, esta web (como la API) esta abandonada y desactualizada, esta hecha con React.js y JavaScript.",
+    "D_TTT_CPP": "C++ con el objetivo de aprender",
+    "D_MUSIC_P": "Web hecha para aprender React (desactualizado)",
+    "VIEW_REPO": "Ver repositorio",
+    "HOME": "Home"
+}
