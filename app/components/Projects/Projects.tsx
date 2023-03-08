@@ -8,7 +8,7 @@ export default async function Projects() {
 
   const projects = data.filter(d => d.topics.includes('project'));
   return (
-    <div className={styles.main}>
+    <div className={styles.main} id='projects'>
       <h2>Projects</h2>
       <div className={styles.listgrid}>
         {/* @ts-ignore Server Component */}
