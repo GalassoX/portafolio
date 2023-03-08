@@ -21,7 +21,7 @@ const generateProgressBar = async (repo: IUserRepo) => {
   let items: JSX.Element[] = [];
   percents.forEach((v, i) => {
     const color = (colorsGh as unknown as { [key: string]: { color: string; url: string; } })[v.lang];
-    items.push(<span style={{ backgroundColor: color.color, width: `${v.percent}%` }}></span>);
+    items.push(<span key={i} style={{ backgroundColor: color.color, width: `${v.percent}%` }}></span>);
     colors.push({ color: color.color, language: v.lang, percent: v.percent });
   });
   return {
@@ -42,7 +42,7 @@ export default async function ProjectCard({ project }: { project: IUserRepo }) {
         {component}
         <div className={styles.langs_list}>
           {languages.map(l => (
-            <div className={styles.langs_list_item}>
+            <div key={l.language} className={styles.langs_list_item}>
               <span className={styles.langs_circle_color} style={{ backgroundColor: l.color }}></span>
               <p>{l.language} - {l.percent.toFixed(2)}%</p>
             </div>
