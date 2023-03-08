@@ -1,12 +1,17 @@
 .sidebar {
     border-color: rgb(var(--card-border-rgb));
-    border-width: thick;
+    border-width: 5px;
     border-style: solid;
     border-right-width: medium;
     min-width: 200px;
 }
 
+.sidebar_options {
+    position: fixed;
+}
+
 .sidebar_item {
-    border-bottom: thick solid rgb(var(--card-border-rgb));
+    border-bottom: 5px solid rgb(var(--card-border-rgb));
     padding: 1em;
+    min-width: calc(200px - 5px);
 }
