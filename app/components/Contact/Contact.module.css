@@ -1,0 +1,13 @@
+.main {
+    margin-inline: 2em;
+}
+
+.items {
+    padding: 2em;
+}
+
+.contact_item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}

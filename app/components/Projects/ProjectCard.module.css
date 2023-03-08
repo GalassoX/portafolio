@@ -1,0 +1,43 @@
+.body {
+    background-color: rgb(var(--card-border-rgb));
+    padding: 1em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: smaller;
+}
+
+.description {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.progress_code {
+    height: 10px;
+    border-radius: 0.5em;
+    border: 1px solid #000;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+.langs_list {
+    margin-top: 1em;
+}
+
+.langs_list_item {
+    display: flex;
+    gap: 0.2em;
+    font-size: small;
+}
+
+.langs_circle_color {
+    padding: 0.5em;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: .5px solid #000;
+    display: inline-block;
+}

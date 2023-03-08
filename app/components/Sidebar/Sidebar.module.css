@@ -1,0 +1,12 @@
+.sidebar {
+    border-color: rgb(var(--card-border-rgb));
+    border-width: thick;
+    border-style: solid;
+    border-right-width: medium;
+    min-width: 200px;
+}
+
+.sidebar_item {
+    border-bottom: thick solid rgb(var(--card-border-rgb));
+    padding: 1em;
+}

@@ -1,0 +1,56 @@
+.topbar {
+  background-color: rgb(var(--card-border-rgb));
+  padding: .5em;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  border-color: rgb(var(--card-border-rgb));
+  border-width: thick;
+  border-style: solid;
+  border-left-width: medium;
+
+  width: calc(100% - 200px);
+}
+
+.content_items {
+  display: flex;
+}
+
+.content_item {
+  border-color: rgb(var(--card-border-rgb));
+  border-style: solid;
+  border-width: 0;
+  border-bottom-width: thick;
+}
+
+.content_item>div {
+  padding: 2em;
+}
+
+.content_right {
+  border-color: rgb(var(--card-border-rgb));
+  border-style: solid;
+  border-width: 0;
+  border-left-width: thick;
+
+}
+
+.content_item_last {
+  border-bottom-width: 0;
+}
+
+@media only screen and (max-width: 980px) {
+  .content_items {
+    display: block;
+  }
+}
