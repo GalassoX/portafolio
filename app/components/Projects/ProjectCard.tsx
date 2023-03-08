@@ -1,9 +1,10 @@
+import { API_URL } from '@root/data/api';
 import { IUserRepo } from '@root/data/interfaces/UserRepo';
 import colorsGh from '@root/data/json/colors.json';
 import styles from './ProjectCard.module.css';
 
 const generateProgressBar = async (repo: IUserRepo) => {
-  const response = await fetch(`http://localhost:3000/api/github/repo/${repo.name}/languages`);
+  const response = await fetch(`${API_URL}/github/repo/${repo.name}/languages`);
   const languages = await response.json() as { [key: string]: number };
 
   const sum = Object.values(languages).reduce(

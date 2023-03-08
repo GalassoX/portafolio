@@ -1,9 +1,10 @@
+import { API_URL } from "@root/data/api";
 import { IUserRepo } from "@root/data/interfaces/UserRepo";
 import ProjectCard from "./ProjectCard";
 import styles from './Projects.module.css';
 
 export default async function Projects() {
-  const response = await fetch('http://localhost:3000/api/github/repos', { cache: 'no-store' });
+  const response = await fetch(`${API_URL}/github/repos`, { cache: 'no-store' });
   const data = await response.json() as IUserRepo[];
 
   const projects = data.filter(d => d.topics.includes('project'));
