@@ -15,7 +15,7 @@
 
 .content {
   border-color: rgb(var(--card-border-rgb));
-  border-width: thick;
+  border-width: 5px;
   border-style: solid;
   border-left-width: medium;
 
@@ -30,7 +30,7 @@
   border-color: rgb(var(--card-border-rgb));
   border-style: solid;
   border-width: 0;
-  border-bottom-width: thick;
+  border-bottom-width: 5px;
 }
 
 .content_item>div {
@@ -41,7 +41,7 @@
   border-color: rgb(var(--card-border-rgb));
   border-style: solid;
   border-width: 0;
-  border-left-width: thick;
+  border-left-width: 5px;
 
 }
 
