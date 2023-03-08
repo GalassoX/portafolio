@@ -6,17 +6,17 @@ export default function Sidebar() {
       <div className={styles.sidebar_options}>
         <a href="#">
           <div className={styles.sidebar_item}>
-            About me
-          </div>
-        </a>
-        <a href="#projects">
-          <div className={styles.sidebar_item}>
-            Projects
+            Sobre mí
           </div>
         </a>
         <a href="#contact">
           <div className={styles.sidebar_item}>
-            Contact me
+            Contactame!
+          </div>
+        </a>
+        <a href="#projects">
+          <div className={styles.sidebar_item}>
+            Proyectos
           </div>
         </a>
       </div>

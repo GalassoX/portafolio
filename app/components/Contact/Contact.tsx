@@ -4,7 +4,7 @@ import styles from './Contact.module.css';
 export default function Contact() {
   return (
     <div className={styles.main} id='contact'>
-      <h2>Contact</h2>
+      <h2>Contactame!</h2>
       <div className={styles.items}>
         <div className={styles.contact_item}>
           <p className={`bi bi-envelope-fill icon_size ${styles.icon}`}></p>
