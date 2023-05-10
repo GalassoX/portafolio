@@ -1,20 +1,23 @@
 import { API_URL } from "@root/data/api";
+import { getRepositories } from "@root/data/github";
 import { IUserRepo } from "@root/data/interfaces/UserRepo";
+import { Suspense } from "react";
 import ProjectCard from "./ProjectCard";
 import styles from './Projects.module.css';
 
 export default async function Projects() {
-  const response = await fetch(`${API_URL}/github/repos`, { cache: 'no-store' });
-  const data = await response.json() as IUserRepo[];
+  const data = await getRepositories();
 
-  const projects = data.filter(d => d.topics.includes('project'));
+  const projects = data.filter(d => d.topics?.includes('project'));
   return (
-    <div className={styles.main} id='projects'>
-      <h2>Proyectos</h2>
-      <div className={styles.listgrid}>
-        {/* @ts-ignore Server Component */}
-        {projects.map(project => <ProjectCard project={project} key={project.full_name} />)}
+    <Suspense fallback={<p>Cargando ...</p>}>
+      <div className={styles.main} id='projects' >
+        <h2>Proyectos</h2>
+        <div className={styles.listgrid}>
+          {/* @ts-ignore Async Server Component */}
+          {projects.map(project => <ProjectCard project={project} key={project.full_name} />)}
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
