@@ -1,32 +1,25 @@
+import SOCIALS from '@root/data/socials';
 import LinkButtons from '../LinkButtons/LinkButtons';
-import styles from './About.module.css';
 
 export default function About() {
   return (
-    <>
-      <h1>Rafael Marrugo</h1>
-      <div className={styles.info}>
-        <p className={styles.info_about}>
-          Soy un desarrollador FullStack, FrontEnd o Backend apasionado por la tecnología.
-          <br />
-          Soy autodidacta con +2 años de experiencia en el desarrollo web.
+    <section className='min-h-screen flex items-center'>
+      <div className='w-1/2 border-b border-port-font'>
+        <h1 className='text-4xl font-semibold'>Hola!</h1>
+        <p className='mt-4'>
+          Soy
+          <span className='font-semibold'> Rafael Marrugo</span>.
+          Desarrollador FullStack autodidacta con +3 años de experiencia en programación.
         </p>
-        <div className={styles.info_lang}>
-          <p>Lenguajes he usado y tengo experiencia:</p>
-          <p>JavaScript, TypeScript, Go, Python, SQL, Java, Rust</p>
-        </div>
-        <div className={styles.buttons}>
-          <div>
-            <button className={`${styles.button} ${styles.button_cv}`}>
-              <p>Ver CV</p>
-              <i className="bi bi-box-arrow-up-right"></i>
-            </button>
-          </div>
-          <div className={styles.link_buttons}>
-            <LinkButtons />
-          </div>
+      </div>
+      <div className='w-1/2'>
+        <LinkButtons />
+        <div className='flex justify-center mt-6'>
+          <a href={SOCIALS.cv} className='flex items-center gap-2 px-14 py-2 rounded-md bg-port-blueground-100 hover:scale-110 transition-transform hover:drop-shadow'>
+            <p>Mi curriculum aquí!</p>
+          </a>
         </div>
       </div>
-    </>
+    </section>
   )
 }
