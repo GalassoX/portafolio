@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main className={''}>
+    <main>
       <div className={styles.main}>
         <Sidebar />
         <div className={styles.content}>
@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </div>
           <div className={`${styles.content_item} ${styles.content_item_last}`}>
-            {/* @ts-ignore Server Component */}
+            {/* @ts-ignore Async Server Component */}
             <Projects />
           </div>
         </div>
