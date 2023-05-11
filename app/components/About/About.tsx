@@ -4,7 +4,7 @@ import LinkButtons from '../LinkButtons/LinkButtons';
 export default function About() {
   return (
     <section className='min-h-screen flex items-center'>
-      <div className='w-1/2 border-b border-port-font'>
+      <div className='w-1/2 border-b-2 p-2 border-port-font'>
         <h1 className='text-4xl font-semibold'>Hola!</h1>
         <p className='mt-4'>
           Soy
