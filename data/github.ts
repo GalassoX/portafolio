@@ -15,6 +15,5 @@ export async function getRepositorieLanguages(repositorie: string) {
         owner: username,
         repo: repositorie
     });
-
     return response.data;
 }

@@ -1,11 +1,11 @@
-import { API_URL } from '@root/data/api';
+import { Suspense } from 'react';
+import { getRepositorieLanguages } from '@root/data/github';
 import { IUserRepo } from '@root/data/interfaces/UserRepo';
 import colorsGh from '@root/data/json/colors.json';
 import styles from './ProjectCard.module.css';
 
 const generateProgressBar = async (repo: IUserRepo) => {
-  const response = await fetch(`${API_URL}/github/repo/${repo.name}/languages`);
-  const languages = await response.json() as { [key: string]: number };
+  const languages = await getRepositorieLanguages(repo.name);
 
   const sum = Object.values(languages).reduce(
     (pV, cV) => pV + cV,
@@ -33,23 +33,24 @@ const generateProgressBar = async (repo: IUserRepo) => {
 
 export default async function ProjectCard({ project }: { project: IUserRepo }) {
 
-  const { component, languages } = await generateProgressBar(project);
+  const { component: progressBar, languages } = await generateProgressBar(project);
 
   return (
-    <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-      <div className={styles.body}>
-        <h3>{project.name}</h3>
-        <p className={styles.description}>{project.description}</p>
-        {component}
+    <Suspense fallback={<p>Cargando ...</p>}>
+      <a href={project.html_url} target="_blank" rel="noopener noreferrer" className='bg-port-blueground-100 p-4 rounded-md transition-transform hover:scale-110 hover:drop-shadow'>
+        <h3 className='text-xl underline text-port-font'>{project.name}</h3>
+        <p className='my-4'>{project.description}</p>
+        <p className='font-bold'>Lenguajes:</p>
+        {progressBar}
         <div className={styles.langs_list}>
           {languages.map(l => (
-            <div key={l.language} className={styles.langs_list_item}>
+            <div key={l.language} className='flex gap-1 items-center text-sm'>
               <span className={styles.langs_circle_color} style={{ backgroundColor: l.color }}></span>
-              <p>{l.language} - {l.percent.toFixed(2)}%</p>
+              <p>{l.language} <span className='text-port-font'>({l.percent.toFixed(2)}%)</span></p>
             </div>
           ))}
         </div>
-      </div>
-    </a>
+      </a>
+    </Suspense>
   )
 }
