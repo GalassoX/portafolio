@@ -1,7 +1,5 @@
 ---
-import randomCuriosities from '@data/random_curiosities.json'
 
-const randomCuriosity = randomCuriosities[Math.floor(Math.random() * randomCuriosities.length)]
 ---
 
 <div class="mt-16 p-4 text-zinc-300 italic w-fit bg-zinc-800 rounded-md flex items-center gap-4">
@@ -21,6 +19,15 @@ const randomCuriosity = randomCuriosities[Math.floor(Math.random() * randomCurio
   </i>
   <div>
     <p class="mb-2 flex items-center gap-2">Dato random:</p>
-    <p class="text-sm">{randomCuriosity}</p>
+    <p class="text-sm" data-random-curiosity></p>
   </div>
 </div>
+
+<script>
+  import randomCuriosities from '@data/random_curiosities.json'
+
+  const randomCuriosity = randomCuriosities[Math.floor(Math.random() * randomCuriosities.length)]
+
+  const textRandomCuriosity = document.querySelector('[data-random-curiosity]')
+  if (textRandomCuriosity) textRandomCuriosity.textContent = randomCuriosity
+</script>
