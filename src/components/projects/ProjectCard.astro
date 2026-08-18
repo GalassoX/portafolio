@@ -6,10 +6,6 @@ interface Props {
 }
 
 const { project } = Astro.props;
-
-const image = project.image 
-  ? import(`../../assets/images/${project.image}.png`)
-  : null;
 ---
 
 <div class="border rounded-md bg-neutral-900 border-zinc-700 hover:shadow-lg py-4 px-6 flex justify-between">
@@ -19,8 +15,8 @@ const image = project.image
       <p class="text-sm">{project.description}</p>
     </div>
     <div class="my-2 w-[400px] h-[170px] relative">
-      {image 
-        ? <Image src={image} alt={project.name} class="absolute bottom-0 rounded-md" />
+      {project.image  
+        ? <Image src={`/images/${project.image}.png`} width={400} height={170} alt={project.name} class="absolute bottom-0 rounded-md" />
         : (
           <div class="flex justify-center items-center h-full text-zinc-700">
             <i class="w-16">
