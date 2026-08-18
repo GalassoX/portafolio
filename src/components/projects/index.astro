@@ -1,12 +1,26 @@
 ---
-import projects from '@data/projects.json'
 import ProjectCard from "./ProjectCard.astro"
+
+let errorFetchingProjects = false;
+
+const url = new URL('/projects.json', Astro.url);
+const projects: Project[] = await fetch(url)
+  .then(response => response.json())
+  .catch(error => {
+    console.error('Error fetching projects:', error);
+    errorFetchingProjects = true;
+    return [];
+  });
 ---
 
 <div class="w-screen">
   <h1 class="text-3xl text-center underline decoration-violet decoration-2 underline-offset-4 mt-6 mb-12">Proyectos</h1>
 
-  <div class="grid grid-cols-2 justify-items-center mx-12">
-    {projects.map(project => <ProjectCard project={project} />)}
+  <div class="mx-12 space-y-4">
+    {errorFetchingProjects ? (
+      <p class="text-red-500 text-center text-lg col-span-2">(!) Error obteniendo los proyectos</p>
+    ) : (
+      projects.map(project => <ProjectCard project={project} />)
+    )}
   </div>
 </div>

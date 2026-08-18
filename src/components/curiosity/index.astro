@@ -1,5 +1,11 @@
 ---
-
+const url = new URL('/curiosity', Astro.url);
+const randomCuriosity: Curiosity = await fetch(url)
+  .then(response => response.json())
+  .catch(error => {
+    console.error('Error fetching random curiosities:', error);
+    return [];
+  });
 ---
 
 <div class="mt-16 p-4 text-zinc-300 italic w-fit bg-zinc-800 rounded-md flex items-center gap-4">
@@ -19,15 +25,6 @@
   </i>
   <div>
     <p class="mb-2 flex items-center gap-2">Dato random:</p>
-    <p class="text-sm" data-random-curiosity></p>
+    <p class="text-sm">{randomCuriosity.text}</p>
   </div>
 </div>
-
-<script>
-  import randomCuriosities from '@data/random_curiosities.json'
-
-  const randomCuriosity = randomCuriosities[Math.floor(Math.random() * randomCuriosities.length)]
-
-  const textRandomCuriosity = document.querySelector('[data-random-curiosity]')
-  if (textRandomCuriosity) textRandomCuriosity.textContent = randomCuriosity
-</script>

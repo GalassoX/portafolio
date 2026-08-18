@@ -1,12 +1,12 @@
 ---
-
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-zinc-700">
   <div class="py-4 flex justify-around items-center">
     <div>
       <h4 class="text-xl">Rafael D. Marrugo Petro</h4>
-      <p class="text-xs text-zinc-400 text-center italic">2024</p>
+      <p class="text-xs text-zinc-400 text-center italic">{currentYear}</p>
     </div>
     <div class="text-sm text-zinc-400 space-y-4">
       <a href="http://github.com/GalassoX/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
@@ -21,7 +21,7 @@
             ></path>
           </svg>
         </i>
-        Ir al perfil de Github
+        Github
       </a>
       <a href="http://github.com/GalassoX/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
         <i class="w-4">
@@ -35,7 +35,7 @@
             ></path>
           </svg>
         </i>
-        Ir al perfil de LinkedIn
+        LinkedIn
       </a>
       <div class="w-fit h-fit relative flex justify-center">
         <p class="cursor-pointer" data-copy-mail>
